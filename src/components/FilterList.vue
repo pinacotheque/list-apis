@@ -59,6 +59,7 @@ export default {
 <style scoped>
 * {
   text-align: center;
+  font-weight: 500;
 }
 .row {
   margin-inline: 20%;
