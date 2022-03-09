@@ -2,7 +2,7 @@
   <the-header />
   <the-opening></the-opening>
   <filter-list @get-entries="getEntries"></filter-list>
-  <the-table :info="info" :selected="selected" />
+  <the-table :info="info" :count="count" :selected="selected" />
 </template>
 
 <script>
@@ -24,6 +24,7 @@ export default {
     return {
       selected: false,
       info: {},
+      count: 0,
     };
   },
   mounted() {
@@ -39,7 +40,9 @@ export default {
       );
       this.selected = true;
       this.info = response.data.entries;
-      console.log(this.info);
+      this.count = response.data.count;
+
+      console.log(this.count);
     },
   },
 };

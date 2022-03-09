@@ -62,6 +62,7 @@ export default {
 }
 .row {
   margin-inline: 20%;
+  margin-top: 50px;
   display: flex;
   justify-content: space-evenly;
 }

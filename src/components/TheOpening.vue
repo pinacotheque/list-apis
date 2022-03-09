@@ -66,4 +66,15 @@ export default {
   margin-left: 50px;
   width: 35%;
 }
+@media screen and (max-width: 900px) {
+  .row {
+    display: block;
+  }
+  .col {
+    width: 90%;
+  }
+  .random {
+    margin-left: 0;
+  }
+}
 </style>
