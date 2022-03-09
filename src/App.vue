@@ -1,5 +1,6 @@
 <template>
   <the-header />
+  <the-opening></the-opening>
   <filter-list @get-entries="getEntries"></filter-list>
   <the-table :info="info" :selected="selected" />
 </template>
@@ -9,6 +10,7 @@ import TheHeader from "./components/TheHeader.vue";
 import FilterList from "./components/FilterList.vue";
 import axios from "axios";
 import TheTable from "./components/TheTable.vue";
+import TheOpening from "./components/TheOpening.vue";
 
 export default {
   name: "App",
@@ -16,6 +18,7 @@ export default {
     TheHeader,
     FilterList,
     TheTable,
+    TheOpening,
   },
   data() {
     return {

@@ -1,13 +1,22 @@
 <template>
-  <h3>Get Categories</h3>
-  <select v-model="selected" @change="changeCategory">
-    <option v-for="category in categories" :key="category" :id="category">
-      {{ category }}
-    </option>
-  </select>
-  <h3>Search By Title</h3>
-  <input v-model="search" placeholder="Search" />
-  <button @click="searchTitle">Search</button>
+  <div class="row">
+    <div class="col">
+      <h3>Get Categories</h3>
+      <select v-model="selected" @change="changeCategory">
+        <option v-for="category in categories" :key="category" :id="category">
+          {{ category }}
+        </option>
+      </select>
+    </div>
+    <div class="col">
+      <h3>Search By Title</h3>
+      <input v-model="search" placeholder="Search" />
+    </div>
+  </div>
+  <div class="buttons">
+    <button @click="searchTitle">Search</button>
+    <button @click="handleReset">Reset</button>
+  </div>
 </template>
 
 <script>
@@ -38,6 +47,11 @@ export default {
         category: this.selected,
       });
     },
+    handleReset() {
+      this.selected = "";
+      this.search = "";
+      this.searchTitle();
+    },
   },
 };
 </script>
@@ -46,25 +60,41 @@ export default {
 * {
   text-align: center;
 }
+.row {
+  margin-inline: 20%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.buttons {
+  margin-block: 25px;
+}
 .filter-option {
   min-width: 25rem;
 }
 select {
   width: 20rem;
   height: 3rem;
-  padding-block: 5px;
-  padding-inline: 5px;
+  padding-block: 10px;
+  padding-inline: 15px;
   border-radius: 20px;
   border: 1px solid rgb(214, 214, 214);
-  margin-block: 5px;
   margin-left: 10px;
   text-align: center;
 }
 input {
-  padding: 10px;
+  height: 3rem;
   width: 15rem;
   border-radius: 20px;
   border: 1px solid rgb(214, 214, 214);
   font-size: 18px;
+}
+button {
+  font-size: 17px;
+  padding: 15px 25px;
+  margin-left: 20px;
+  align-self: center;
+  border-radius: 10px;
+  border: 1px solid rgb(214, 214, 214);
+  cursor: pointer;
 }
 </style>

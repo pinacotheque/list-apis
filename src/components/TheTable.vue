@@ -1,5 +1,5 @@
 <template>
-  <table class="table table-striped table-bordered" v-if="selected">
+  <table v-if="selected">
     <thead>
       <tr>
         <th>API</th>
@@ -20,7 +20,7 @@
         <td>{{ item.Description }}</td>
         <td>{{ item.HTTPS }}</td>
         <td>
-          <a :href="item.Link">{{ item.Link }}</a>
+          <a :href="item.Link">Visit</a>
         </td>
       </tr>
     </tbody>
@@ -33,10 +33,42 @@ export default {
 </script>
 
 <style scoped>
+* {
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+}
 th {
   font-size: 17px;
   font-weight: 500;
   border-bottom: 1px solid grey;
   padding-bottom: 5px;
+}
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  text-align: center;
+}
+
+table td,
+table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #29c95d;
+  color: white;
 }
 </style>
