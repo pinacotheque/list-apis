@@ -31,7 +31,7 @@ export default {
     this.getEntries({});
   },
   methods: {
-    async getEntries({ search = " ", category = " " }) {
+    async getEntries({ search = "", category = "" }) {
       let response = await axios.get(
         "https://api.publicapis.org/entries?title=" +
           search +
