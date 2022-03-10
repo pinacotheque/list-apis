@@ -99,4 +99,19 @@ button {
   border: 1px solid rgb(214, 214, 214);
   cursor: pointer;
 }
+@media screen and (max-width: 900px) {
+  .row {
+    display: block;
+    margin-inline: 0;
+  }
+  select {
+    width: fit-content;
+  }
+  input {
+    width: fit-content;
+  }
+  .col {
+    width: 90%;
+  }
+}
 </style>
